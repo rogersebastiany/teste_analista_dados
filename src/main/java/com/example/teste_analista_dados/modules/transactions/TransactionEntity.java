@@ -32,6 +32,8 @@ public class TransactionEntity {
     @Column(name = "wallet_id", nullable = false)
     private UUID wallet_id;
 
+    private String type;
+
     private BigDecimal amount;
 
     @CreationTimestamp

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.teste_analista_dados.modules.wallets.WalletEntity;
 import com.example.teste_analista_dados.useCases.CreateWalletUseCase;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/wallet")
 public class WalletController {
@@ -17,7 +19,7 @@ public class WalletController {
     private CreateWalletUseCase createWalletUseCase;
 
     @PostMapping("/")
-    public WalletEntity create(@RequestBody WalletEntity walletEntity) {
+    public WalletEntity create(@Valid @RequestBody WalletEntity walletEntity) {
         return this.createWalletUseCase.execute(walletEntity);
     }
 }

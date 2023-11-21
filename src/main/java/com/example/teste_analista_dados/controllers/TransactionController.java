@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.teste_analista_dados.modules.transactions.TransactionEntity;
 import com.example.teste_analista_dados.useCases.CreateTransactionUseCase;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
@@ -17,7 +19,7 @@ public class TransactionController {
     private CreateTransactionUseCase createTransactionUseCase;
 
     @PostMapping("/")
-    public TransactionEntity create(@RequestBody TransactionEntity transactionEntity) {
+    public TransactionEntity create(@Valid @RequestBody TransactionEntity transactionEntity) {
         return this.createTransactionUseCase.execute(transactionEntity);
     }
 }
