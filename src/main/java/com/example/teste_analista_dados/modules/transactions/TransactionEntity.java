@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.example.teste_analista_dados.modules.wallets.WalletEntity;
 
 import jakarta.persistence.Column;
@@ -32,6 +34,7 @@ public class TransactionEntity {
 
     private BigDecimal amount;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     private String status;

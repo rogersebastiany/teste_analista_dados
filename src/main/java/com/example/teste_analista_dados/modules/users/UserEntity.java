@@ -3,6 +3,8 @@ package com.example.teste_analista_dados.modules.users;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,5 +29,6 @@ public class UserEntity {
 
     private String phone;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 }
